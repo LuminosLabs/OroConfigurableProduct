@@ -1,0 +1,19 @@
+{
+    "name": "luminoslabs/oro-configurable-product",
+    "description": "oro-configurable-product",
+    "type": "bundle",
+    "autoload": {
+        "psr-4": {
+            "Luminoslabs\\OroConfigurableProduct\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Robert Onac",
+            "email": "robert.onac@luminoslabs.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {}
+}
