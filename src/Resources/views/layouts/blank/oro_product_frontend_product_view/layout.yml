@@ -1,0 +1,46 @@
+layout:
+    actions:
+        - '@setBlockTheme':
+            themes: 'layout.html.twig'
+
+        - '@setOption':
+              id: product_view_attribute_group_general
+              optionName: entity
+              optionValue: '=data["oro_product_variant"].getProductVariantOrProduct(data)'
+
+        - '@addTree':
+            items:
+              app_product_view_attribute_group_general_container:
+                blockType: layout_subtree_update
+                options:
+                  reloadEvents: [ 'layout-subtree:update:product' ]
+            tree:
+              product_view_specification_container:
+                app_product_view_attribute_group_general_container: ~
+        - '@move':
+            id: product_view_attribute_group_general
+            parentId: app_product_view_attribute_group_general_container
+
+        - '@addTree':
+            items:
+              app_product_view_description_container:
+                blockType: layout_subtree_update
+                options:
+                  reloadEvents: [ 'layout-subtree:update:product' ]
+            tree:
+              product_view_content_container:
+                app_product_view_description_container: ~
+        - '@move':
+            id: product_view_description_container
+            parentId: app_product_view_description_container
+
+        - '@addTree':
+            items:
+              app_product_view_container:
+                blockType: container
+            tree:
+              page_content:
+                app_product_view_container: ~
+        - '@move':
+            id: product_view_container
+            parentId: app_product_view_container
