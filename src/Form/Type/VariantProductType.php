@@ -33,7 +33,7 @@ class VariantProductType extends AbstractType
             if ($parentProduct->isConfigurable()) {
                 $qb = $form->getConfig()->getOption('query_builder');
                 $qb->setParameter('productType', Product::TYPE_SIMPLE);
-                $qb->setParameter('attributeFamily', $parentProduct->getAttributeFamily()->getId());
+                $qb->setParameter('attributeFamily', $parentProduct->getAttributeFamily());
             } else {
                 $form->getParent()->remove('default_variant_product');
             }
