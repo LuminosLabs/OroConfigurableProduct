@@ -1,0 +1,4 @@
+oro:
+  product:
+    default_variant_product:
+      label: 'Default Variant Product'

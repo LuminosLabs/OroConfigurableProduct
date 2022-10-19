@@ -1,0 +1,19 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Luminoslabs\OroConfigurableProduct\:
+    resource: '../../*'
+    exclude: '../../{DependencyInjection,Entity}'
+
+  oro_product.provider.product_variant_availability_provider:
+    class: 'Luminoslabs\OroConfigurableProduct\Provider\ProductVariantProvider'
+    arguments:
+      - '@doctrine'
+      - '@oro_product.provider.custom_field_provider'
+      - '@property_accessor'
+      - '@event_dispatcher'
+      - '@oro_product.product_variant_field.registry.product_variant_field_value_handler_registry'
+      - '@Oro\Bundle\EntityBundle\ORM\DoctrineHelper'
+
