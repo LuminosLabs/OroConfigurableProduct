@@ -24,16 +24,6 @@ use Oro\Bundle\ProductBundle\Provider\ProductVariantAvailabilityProvider;
  */
 class ProductVariantProvider extends ProductVariantAvailabilityProvider
 {
-    public function __construct(
-        ManagerRegistry $doctrine,
-        CustomFieldProvider $customFieldProvider,
-        PropertyAccessorInterface $propertyAccessor,
-        EventDispatcherInterface $eventDispatcher,
-        ProductVariantFieldValueHandlerRegistry $fieldValueHandlerRegistry,
-        private DoctrineHelper $doctrineHelper
-    ) {
-        parent::__construct($doctrine, $customFieldProvider, $propertyAccessor, $eventDispatcher, $fieldValueHandlerRegistry);
-    }
 
     public function getSimpleProductByVariantFields(
         Product $configurableProduct,
